@@ -1,7 +1,7 @@
 package com.chuwa.springbasic.service;
 
-import com.chuwa.springbasic.components.Dependency;
-import com.chuwa.springbasic.components.impl.DependencyImplFirst;
+import com.chuwa.springbasic.components.JpaChuwa;
+import com.chuwa.springbasic.components.impl.HibernateChuwa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -14,42 +14,55 @@ import org.springframework.stereotype.Component;
 public class DoDependencyInjection {
     /**
      * Match by type
+     * 变量名您可以随意取
      */
     @Autowired
-    private DependencyImplFirst first;
+    private HibernateChuwa hibernate;
 
     /**
      * Match by Name
+     * 变量名必须是某个子类的名称，且首字母小写,
+     * 如果是来自于@Bean,则用的是方法名小写。
      */
     @Autowired
-    private Dependency dependencyImplFirst;
+    private JpaChuwa hibernateChuwa;
 
     @Autowired
-    private Dependency dependencyImplSecond;
+    private JpaChuwa eclipsedLinkChuwa;
 
     @Autowired
-    private Dependency dependencyImplThree;
+    private JpaChuwa myDataNucleus;
+
+    /**
+     * wrong
+     * NoUniqueBeanDefinitionException: No qualifying bean of type 'com.chuwa.springbasic.components.JpaChuwa'
+     * available: expected single matching bean but found 3: eclipsedLinkChuwa,hibernateChuwa,myDataNucleus
+     */
+//    @Autowired
+//    private JpaChuwa jpaChuwa;
+
 
     /**
      * Match by Qualifier
+     * 变量名您随意起
      */
     @Autowired
-    @Qualifier("dependencyImplFirst")
-    private Dependency dependency;
+    @Qualifier("hibernateChuwa")
+    private JpaChuwa jpaChuwaQualifier;
 
     public void printFirstMessage() {
-        System.out.print("By Type:(DependencyFirst first)           : ");
-        first.printMessage();
+        System.out.print("By Type(HibernateChuwa hibernate)         : ");
+        hibernate.printMessage();
 
-        System.out.print("By Name:(Dependency dependencyFirst)      : ");
-        dependencyImplFirst.printMessage();
-        System.out.print("By Name(Dependency dependencySecond)      : ");
-        dependencyImplSecond.printMessage();
+        System.out.print("By Name(JpaChuwa hibernateChuwa)          : ");
+        hibernateChuwa.printMessage();
+        System.out.print("By Name(JpaChuwa eclipsedLinkChuwa)       : ");
+        eclipsedLinkChuwa.printMessage();
 
-        System.out.print("By @Bean: (Dependency dependencyThree())  : ");
-        dependencyImplThree.printMessage();
+        System.out.print("By Name and @Bean:(myDataNucleus())       : ");
+        myDataNucleus.printMessage();
 
-        System.out.print("By @Qualifier(\"dependencyFirst\")          : ");
-        dependency.printMessage();
+        System.out.print("By @Qualifier(\"hibernateChuwa\")         : ");
+        jpaChuwaQualifier.printMessage();
     }
 }

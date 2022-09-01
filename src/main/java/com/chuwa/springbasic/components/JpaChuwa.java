@@ -3,7 +3,7 @@ package com.chuwa.springbasic.components;
 /**
  * @author bigo
  */
-public interface Dependency {
+public interface JpaChuwa {
 
     void printMessage();
 }
