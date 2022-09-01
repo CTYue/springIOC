@@ -1,7 +1,7 @@
 package com.chuwa.springbasic.service;
 
 import com.chuwa.springbasic.components.Dependency;
-import com.chuwa.springbasic.components.impl.DependencyFirst;
+import com.chuwa.springbasic.components.impl.DependencyImplFirst;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -16,25 +16,25 @@ public class DoDependencyInjection {
      * Match by type
      */
     @Autowired
-    private DependencyFirst first;
+    private DependencyImplFirst first;
 
     /**
      * Match by Name
      */
     @Autowired
-    private Dependency dependencyFirst;
+    private Dependency dependencyImplFirst;
 
     @Autowired
-    private Dependency dependencySecond;
+    private Dependency dependencyImplSecond;
 
     @Autowired
-    private Dependency dependencyThree;
+    private Dependency dependencyImplThree;
 
     /**
      * Match by Qualifier
      */
     @Autowired
-    @Qualifier("dependencyFirst")
+    @Qualifier("dependencyImplFirst")
     private Dependency dependency;
 
     public void printFirstMessage() {
@@ -42,12 +42,12 @@ public class DoDependencyInjection {
         first.printMessage();
 
         System.out.print("By Name:(Dependency dependencyFirst)      : ");
-        dependencyFirst.printMessage();
+        dependencyImplFirst.printMessage();
         System.out.print("By Name(Dependency dependencySecond)      : ");
-        dependencySecond.printMessage();
+        dependencyImplSecond.printMessage();
 
         System.out.print("By @Bean: (Dependency dependencyThree())  : ");
-        dependencyThree.printMessage();
+        dependencyImplThree.printMessage();
 
         System.out.print("By @Qualifier(\"dependencyFirst\")          : ");
         dependency.printMessage();

@@ -1,7 +1,7 @@
 package com.chuwa.springbasic.config;
 
 import com.chuwa.springbasic.components.Dependency;
-import com.chuwa.springbasic.components.impl.DependencyNoComponent;
+import com.chuwa.springbasic.components.impl.DependencyImplNoComponent;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class BeanConfig {
 
     @Bean
-    public Dependency dependencyThree() {
-        return new DependencyNoComponent();
+    public Dependency dependencyImplThree() {
+        return new DependencyImplNoComponent();
     }
 }

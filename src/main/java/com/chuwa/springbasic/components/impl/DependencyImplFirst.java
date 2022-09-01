@@ -1,14 +1,16 @@
 package com.chuwa.springbasic.components.impl;
 
 import com.chuwa.springbasic.components.Dependency;
+import org.springframework.stereotype.Component;
 
 /**
  * @author bigo
  */
-public class DependencyNoComponent implements Dependency {
+@Component
+public class DependencyImplFirst implements Dependency {
 
     @Override
     public void printMessage() {
-        System.out.println("Message from Dependency Three - No @Component. By @Bean!");
+        System.out.println("Message from Dependency First!");
     }
 }
