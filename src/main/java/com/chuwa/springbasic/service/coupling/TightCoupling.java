@@ -1,6 +1,5 @@
 package com.chuwa.springbasic.service.coupling;
 
-import com.chuwa.springbasic.components.JpaChuwa;
 import com.chuwa.springbasic.components.impl.EclipseLinkChuwa;
 import com.chuwa.springbasic.components.impl.HibernateChuwa;
 
