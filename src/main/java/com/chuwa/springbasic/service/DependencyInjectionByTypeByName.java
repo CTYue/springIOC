@@ -9,9 +9,14 @@ import org.springframework.stereotype.Component;
 /**
  * @author b1go
  * @date 9/1/22 12:12 AM
+ *
+ * 1. 如果只有一个impl,则默认用这个impl
+ * 2. 如果有多个impl, 则按变量名寻找，若找到，则用它。
+ * 3. 如果有多个impl,按变量名不能确定用哪一个，then check @primary，若有，则用primary
+ *                                                           若无，则报错
  */
 @Component
-public class DoDependencyInjection {
+public class DependencyInjectionByTypeByName {
     /**
      * Match by type
      * 变量名您可以随意取
@@ -28,7 +33,7 @@ public class DoDependencyInjection {
     private JpaChuwa hibernateChuwa;
 
     @Autowired
-    private JpaChuwa eclipsedLinkChuwa;
+    private JpaChuwa eclipseLinkChuwa;
 
     @Autowired
     private JpaChuwa myDataNucleus;
@@ -57,7 +62,7 @@ public class DoDependencyInjection {
         System.out.print("By Name(JpaChuwa hibernateChuwa)          : ");
         hibernateChuwa.printMessage();
         System.out.print("By Name(JpaChuwa eclipsedLinkChuwa)       : ");
-        eclipsedLinkChuwa.printMessage();
+        eclipseLinkChuwa.printMessage();
 
         System.out.print("By Name and @Bean:(myDataNucleus())       : ");
         myDataNucleus.printMessage();

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * Bean名默认是class名，首字母小写
  */
 @Component
-public class EclipsedLinkChuwa implements JpaChuwa {
+public class EclipseLinkChuwa implements JpaChuwa {
     @Override
     public void printMessage() {
         System.out.println("Message from " + getClass().getName());
