@@ -2,9 +2,9 @@ package com.chuwa.springbasic.main;
 
 import com.chuwa.springbasic.components.impl.EclipseLinkChuwa;
 import com.chuwa.springbasic.components.impl.HibernateChuwa;
-import com.chuwa.springbasic.service.DependencyInjection;
-import com.chuwa.springbasic.service.LooseCoupling;
-import com.chuwa.springbasic.service.TightCoupling;
+import com.chuwa.springbasic.service.coupling.DependencyInjection;
+import com.chuwa.springbasic.service.coupling.LooseCoupling;
+import com.chuwa.springbasic.service.coupling.TightCoupling;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
