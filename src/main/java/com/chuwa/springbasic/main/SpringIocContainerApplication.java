@@ -9,11 +9,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class SpringIocContainerApplication {
 
     public static void main(String[] args) {
-//        ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
-//        context.getBean("dependencyInjectionByTypeByName", DependencyInjectionByTypeByName.class).printFirstMessage();
-
-        ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);
+        // 容器1
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
         context.getBean("dependencyInjectionByTypeByName", DependencyInjectionByTypeByName.class).printFirstMessage();
+
+        // 容器2
+        ApplicationContext context2 = new AnnotationConfigApplicationContext(BeanConfig.class);
+        context2.getBean("dependencyInjectionByTypeByName", DependencyInjectionByTypeByName.class).printFirstMessage();
+
+        //  容器3
+        ApplicationContext context3 = new ClassPathXmlApplicationContext("bean2.xml");
     }
 
 }
