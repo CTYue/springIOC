@@ -1,7 +1,6 @@
-package com.chuwa.springbasic.main;
+package com.chuwa.springbasic.main.getbeanbytypebyname;
 
 import com.chuwa.springbasic.config.BeanConfig;
-import com.chuwa.springbasic.service.DependencyInjectionByTypeByName;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -9,7 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @author b1go
  * @date 9/5/22 12:35 AM
  */
-public class GetBeanMain {
+public class GetBeanByTypeByName {
 
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);

@@ -1,6 +1,6 @@
-package com.chuwa.springbasic.service.DITypes;
+package com.chuwa.springbasic.main.DITypes;
 
-import com.chuwa.springbasic.service.dependencies.JpaICC;
+import com.chuwa.springbasic.components.JpaChuwa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,21 +10,21 @@ import org.springframework.stereotype.Component;
  * @date 9/1/22 12:12 AM
  */
 @Component
-public class DependencyInjectionTypesConstructor {
+public class DependencyInjectionTypesConstructorAndFieldAndSetter {
 
     /**
      * type 1, field Injection
      */
 //    @Autowired
-    private JpaICC jpaICC;
+    private JpaChuwa jpaChuwa;
 
     /**
      * type 2, Constructor Injection
      * @Autowired可以省略
      */
     @Autowired
-    public DependencyInjectionTypesConstructor(JpaICC jpaICC) {
-        this.jpaICC = jpaICC;
+    public DependencyInjectionTypesConstructorAndFieldAndSetter(JpaChuwa jpaChuwa) {
+        this.jpaChuwa = jpaChuwa;
     }
 
     /**
@@ -32,11 +32,11 @@ public class DependencyInjectionTypesConstructor {
      * @Autowired可以省略
      */
 //    @Autowired
-    public void setJpaICC(JpaICC jpaICC) {
-        this.jpaICC = jpaICC;
+    public void setJpaChuwa(JpaChuwa jpaChuwa) {
+        this.jpaChuwa = jpaChuwa;
     }
 
     public void printMessage() {
-        jpaICC.printMessage();
+        jpaChuwa.printMessage();
     }
 }

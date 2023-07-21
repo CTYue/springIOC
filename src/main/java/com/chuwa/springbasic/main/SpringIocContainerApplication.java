@@ -1,7 +1,7 @@
 package com.chuwa.springbasic.main;
 
 import com.chuwa.springbasic.config.BeanConfig;
-import com.chuwa.springbasic.service.DependencyInjectionByTypeByName;
+import com.chuwa.springbasic.main.getbeanbytypebyname.DependencyInjectionByTypeByName;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

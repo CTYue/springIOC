@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * Bean名默认是class名，首字母小写
  */
 @Component
-//@Primary
+@Primary
 public class HibernateChuwa implements JpaChuwa {
 
     @Override

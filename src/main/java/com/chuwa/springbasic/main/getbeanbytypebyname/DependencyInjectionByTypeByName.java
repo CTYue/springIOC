@@ -1,4 +1,4 @@
-package com.chuwa.springbasic.service;
+package com.chuwa.springbasic.main.getbeanbytypebyname;
 
 import com.chuwa.springbasic.components.JpaChuwa;
 import com.chuwa.springbasic.components.impl.HibernateChuwa;
