@@ -12,4 +12,11 @@ public class DataNucleusChuwaNoComponent implements JpaChuwa {
     public void printMessage() {
         System.out.println("Message from " + getClass().getName() + " - No @Component. By @Bean!");
     }
+
+    public void init() {
+        System.out.println("init method inside DataNucleusChuwaNoComponent");
+    }
+    public void destroy() {
+        System.out.println("destroy method inside DataNucleusChuwaNoComponent");
+    }
 }
