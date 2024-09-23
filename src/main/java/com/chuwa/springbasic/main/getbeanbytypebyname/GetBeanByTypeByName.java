@@ -1,6 +1,7 @@
 package com.chuwa.springbasic.main.getbeanbytypebyname;
 
 import com.chuwa.springbasic.config.BeanConfig;
+import com.chuwa.springbasic.main.DITypes.DependencyInjectionTypesConstructorAndFieldAndSetter;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -18,7 +19,6 @@ public class GetBeanByTypeByName {
          * 2. Retrieving Bean by Name
          * 3. Retrieving Bean by Type
          */
-
         System.out.println("\n ******  1. Retrieving Bean by Name and Type *****");
         // 1. Retrieving Bean by Name and Type
         context.getBean("dependencyInjectionByTypeByName", DependencyInjectionByTypeByName.class).printFirstMessage();
@@ -36,5 +36,25 @@ public class GetBeanByTypeByName {
         // 3. Retrieving Bean by Type
         System.out.println("\n ******  3. Retrieving Bean by Type *****");
         context.getBean(DependencyInjectionByTypeByName.class).printFirstMessage();
+
+
+
+        System.out.println("\n ******  1. Retrieving Bean by Name and Type *****");
+        // 1. Retrieving Bean by Name and Type
+        context.getBean("dependencyInjectionTypesConstructorAndFieldAndSetter", DependencyInjectionTypesConstructorAndFieldAndSetter.class).printMessage();
+
+        System.out.println("\n ******  2. Retrieving Bean by Name *****");
+        // 2. Retrieving Bean by Name
+        o = context.getBean("dependencyInjectionTypesConstructorAndFieldAndSetter");
+        DependencyInjectionTypesConstructorAndFieldAndSetter di1 = (DependencyInjectionTypesConstructorAndFieldAndSetter) o;
+        di1.printMessage();
+
+        System.out.println("\n ******  or *****");
+        // or
+        ((DependencyInjectionTypesConstructorAndFieldAndSetter) context.getBean("dependencyInjectionTypesConstructorAndFieldAndSetter")).printMessage();
+
+        // 3. Retrieving Bean by Type
+        System.out.println("\n ******  3. Retrieving Bean by Type *****");
+        context.getBean(DependencyInjectionTypesConstructorAndFieldAndSetter.class).printMessage();
     }
 }
