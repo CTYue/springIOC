@@ -37,7 +37,7 @@ public class CouplingMain {
         System.out.println("\n**** Dependency Injection *******");
         System.out.println("\nComponents do NOT rely on concrete implementations, changes in implementations do NOT affect the other components.");
         System.out.println("\nAND");
-        System.out.println("\nIf a component requires an other component (we call it dependency, Spring IOC will inject it for us, instead of new it manually) ");
+        System.out.println("\nIf a component requires an other component (we call it dependency) Spring IOC will inject it for us, instead of new it manually");
         DependencyInjection dependencyInjection = context.getBean("dependencyInjection", DependencyInjection.class);
         dependencyInjection.printMessage();
         System.out.println("我们不new，IOC容器new, 我们从IOC容器中取object");
